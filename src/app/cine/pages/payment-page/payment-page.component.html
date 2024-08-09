@@ -1,0 +1,27 @@
+<div class="page">
+  <div class="background">
+    <div class="overlay"></div>
+    <img [src]="image_src()" [alt]="image_alt()" class="poster">
+  </div>
+
+  <div class="payment">
+    <div #ticket_selector class="ticket-selector">
+      <ticket-selector (onContinue)="moveToSeatSelection($event)"/>
+    </div>
+
+    <div #seat_selector class="seat-selector invisible">
+      <seat-selector
+        [ticket_selection]="ticket_selection()"
+        (onReturn)="returnToTicketSelection()"
+        (onContinue)="moveToFinalPayment($event)"/>
+    </div>
+
+    <div #final_payment class="final-payment invisible">
+      <final-payment
+        [ticket_selection]="ticket_selection()"
+        [selected_seats]="selected_seats()"
+        (onReturn)="returnToSeatSelection()"
+        (onPay)="finishPayment()"/>
+    </div>
+  </div>
+</div>

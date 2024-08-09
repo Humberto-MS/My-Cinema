@@ -1,0 +1,113 @@
+nav {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 10px black;
+  background: linear-gradient(to bottom, rgba(2,0,36,1) 0%, rgba(109,24,168,1) 0%, rgba(173,35,5,1) 100%);
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-around;
+}
+
+.toggle-nav {
+  background-image: url(@public/toggleNavBar.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  display: grid;
+  align-self: center;
+  margin-top: 20px;
+}
+
+.logo {
+  display: flex;
+  color: white;
+  text-decoration: none;
+  align-self: center;
+}
+
+.logo-img {
+  height: 6rem;
+  width: 6rem;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 400;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  align-items: center;
+  margin-top: 0;
+  padding-left: 0;
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity 1s ease, max-height 1s ease;
+}
+
+.link {
+  cursor: pointer;
+  transition: 0.3s all;
+  color: white;
+  padding: 1rem;
+  font-family: "Quattrocento", serif;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+  width: 80%;
+  margin-bottom: 10px;
+}
+
+.link:hover {
+  border-radius: 15px;
+  box-shadow: inset 0 5px 10px black;
+}
+
+.active {
+  border-radius: 15px;
+  background-color: darkslateblue;
+  box-shadow: inset 0 5px 10px black;
+}
+
+@media ( min-width: 460px ) {
+  nav {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(109,24,168,1) 0%, rgba(173,35,5,1) 100%);
+    flex-direction: row;
+    padding: 0 2rem;
+    justify-content: space-between;
+    height: 6rem;
+  }
+
+  .toggle-nav { display: none; }
+
+  .links {
+    flex-direction: row;
+    margin-top: 16px;
+    justify-content: space-around;
+    width: 30rem;
+  }
+
+  .link {
+    width: auto;
+    margin-bottom: 0;
+  }
+}
+
+@media ( max-width: 460px ) {
+  .hidden {
+    opacity: 0;
+    max-height: 0;
+  }
+}
+
+

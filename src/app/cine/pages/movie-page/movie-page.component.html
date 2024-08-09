@@ -1,0 +1,56 @@
+<div class="movie">
+  <div class="info">
+    <img class="movie-image" [src]="movie().img_src" [alt]="movie().img_alt">
+
+    <div class="movie-info">
+      <h2 class="movie-title"> {{ movie().title }} </h2>
+
+      <p class="movie-synopsis">
+        <span class="synopsis-title"> Synopsis: </span>
+        {{ movie().synopsis }}
+      </p>
+    </div>
+  </div>
+
+  <div class="info">
+    <h2 class="hours-title"> Dub </h2>
+    <ul class="hours">
+      @for ( hour of movie().hours; track hour ) {
+        <li class="hour">
+          <button (click)="goToPay(hour)" class="hour-button"> {{ hour }} </button>
+        </li>
+      }
+    </ul>
+
+    <br><br>
+    <h2 class="hours-title"> Sub </h2>
+    <ul class="hours">
+      @for ( hour of movie().hours; track hour ) {
+        <li class="hour">
+          <button (click)="goToPay(hour)" class="hour-button"> {{ hour }} </button>
+        </li>
+      }
+    </ul>
+  </div>
+
+  <div class="info">
+    <h3 class="cast-title">Cast 📖</h3>
+    <ul class="movie-cast">
+      @for ( actor of movie().cast; track actor ) {
+        <li class="character"> {{ actor }} </li>
+      }
+    </ul>
+  </div>
+
+  <div class="info">
+    <h3 class="trailer-title">Movie Trailer 🎥</h3>
+    <youtube-player
+      [videoId]="movie().trailer_id"
+      suggestedQuality="highres"
+      class="trailer"
+      [height]="trailer_height"
+      [width]="trailer_width">
+    </youtube-player>
+  </div>
+
+</div>

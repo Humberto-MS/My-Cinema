@@ -1,0 +1,19 @@
+<div class="page">
+  <carousel/>
+
+  <div class="billboard">
+    <h2>Billboard</h2>
+
+    <ul class="movies">
+      @for ( image of poster_images(); track image.alt ) {
+        <li class="movie">
+          <a href="movie">
+            <img class="movie-image" [src]="image.src" [alt]="image.alt">
+          </a>
+
+          <p class="movie-title"> {{ image.title }} </p>
+        </li>
+      }
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<section class="carousel">
+  <div class="overlay"></div>
+
+  <div class="imgs-container">
+    <ul #slides class="slides">
+      @for ( image of carousel_images(); track image.alt ) {
+        <li class="slide">
+          <a class="movie-anchor" href="movie">
+            <img class="carousel-image" [src]="image.src" [alt]="image.alt">
+
+            <div class="text">
+              <h2 class="title"> {{ image.title }} </h2>
+              <p class="synopsis"> {{ image.synopsis }} </p>
+            </div>
+          </a>
+        </li>
+      }
+    </ul>
+  </div>
+</section>

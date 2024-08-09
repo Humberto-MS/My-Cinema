@@ -1,0 +1,31 @@
+<div class="selector">
+  <h2 class="title">Final Checkout</h2>
+
+  <ul class="checkout-items">
+    @for ( item of checkout_items; track item.name ) {
+      <li
+        class="item" [class]="item.class">
+        {{ item.name }}:
+        <span class="item-value">{{ item.value }}</span>
+      </li>
+    }
+  </ul>
+
+  <div class="input-container">
+    <p class="card-title">Credit/Debit Card:</p>
+
+    <input
+      (input)="setHyphen()"
+      (keydown)="checkInput($event)"
+      #card_input
+      class="card-input"
+      type="text"
+      maxlength="19"
+      placeholder="XXXX-XXXX-XXXX-XXXX">
+  </div>
+
+  <div class="buttons">
+    <button (click)="return()" class="return">Return</button>
+    <button (click)="pay()" class="continue">Pay</button>
+  </div>
+</div>

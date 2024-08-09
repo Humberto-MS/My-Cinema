@@ -1,0 +1,24 @@
+<div class="page">
+  <hr>
+  <h1>About Me</h1>
+  <hr>
+  <p>This app was created by me, <span class="name">Humberto Medina Santos</span>!</p>
+  <p>I'm a Software Engineer student at Instituto Tecnológico De La Laguna from Tecnológico Nacional de México in Torreón, Coahuila, México, currently in the 7th semester</p>
+
+  &nbsp;<hr>
+  <h2>My Social Media</h2>
+  <hr>
+  <ul>
+    @for ( sm of MySM(); track sm.name ) {
+      <li>
+        <a
+          [href]="sm.url"
+          target="_blank"
+          [style]="sm.color">
+          {{ sm.name }}
+        </a>
+      </li>
+    }
+  </ul>
+</div>
+

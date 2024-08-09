@@ -1,0 +1,22 @@
+<div class="selector">
+  <h2 class="title">Select your tickets 🎫</h2>
+
+  <div class="types">
+    @for ( type of ticket_types(); track type.title ) {
+      <div [class]="type.class">
+        <div class="type">
+          <h3 class="type-title"> {{ type.title }} </h3>
+          <p class="price">${{ type.price }} MXN</p>
+        </div>
+
+        <div class="counter-buttons">
+          <button (click)="decrementCounter(type.class)" class="button"> - </button>
+          <p class="counter"> {{ type.counter }} </p>
+          <button (click)="incrementCounter(type.class)" class="button"> + </button>
+        </div>
+      </div>
+    }
+  </div>
+
+  <button (click)="continue()" class="continue">Continue</button>
+</div>

@@ -1,0 +1,99 @@
+h2 {
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 900;
+}
+
+p {
+  font-family: "Quattrocento", serif;
+  font-weight: 400;
+}
+
+a { color: white; }
+
+svg:hover {
+  cursor: pointer;
+  color: brown;
+}
+
+.footer {
+  color: white;
+  background-color: #2A2A2C;
+  box-shadow: 0 -5px 10px black;
+  padding: 3rem;
+}
+
+.content {
+  display: grid;
+  justify-items: center;
+  margin-bottom: 3rem;
+}
+
+.content-hover:hover {
+  cursor: pointer;
+  color: brown;
+  font-weight: 900;
+}
+
+.contact {
+  font-size: 2.3rem;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.phone {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 5rem;
+}
+
+.phone:hover {
+  cursor: pointer;
+  color: brown;
+}
+
+.social-media {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(3,1fr);
+  align-items: center;
+  justify-items: center;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 80px;
+}
+
+@media ( min-width: 460px ) {
+  .footer {
+    height: 40rem;
+    display: grid;
+    grid-template-rows: 6fr 2fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "col1 col2 col3" "col4 col5 col6" "col7 col7 col7";
+  }
+
+  .footer-content:nth-child(1) { grid-area: col1; }
+  .footer-content:nth-child(2) { grid-area: col2; }
+  .footer-content:nth-child(3) { grid-area: col3; }
+  .footer-content:nth-child(4) { grid-area: col4; }
+  .footer-content:nth-child(5) { grid-area: col5; }
+  .footer-content:nth-child(6) { grid-area: col6; }
+  .footer-content:nth-child(7) { grid-area: col7; }
+
+  .contact { margin-bottom: 20px; }
+
+  .phone {
+    margin-top: 35px;
+    margin-bottom: auto;
+  }
+
+  .copyright {
+    margin-top: auto;
+    margin-left: 3rem;
+    text-align: left;
+  }
+}
+
+

@@ -1,0 +1,22 @@
+<nav #nav>
+  <div class="navigation">
+    <button (click)="toggleNavBar()" class="toggle-nav"></button>
+
+    <a (click)="toggleNavBar()" href="home" class="logo">
+      <img class="logo-img" src="logoCinema.png" alt="Cinema Logo"/>
+      <h1 class="logo-title">My Cinema</h1>
+    </a>
+  </div>
+
+  <ul [class.hidden]="hidden" class="links">
+    @for ( item of NavBarItems(); track item.name ) {
+      <li
+        (click)="toggleNavBar()"
+        class="link"
+        [routerLink]="item.route"
+        routerLinkActive="active">
+        {{ item.name }}
+      </li>
+    }
+  </ul>
+</nav>

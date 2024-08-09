@@ -1,0 +1,41 @@
+<div class="selector">
+  <h2 class="title">Select your seats</h2>
+
+  <div class="types">
+    @for ( type of seats_types; track type.type ) {
+      <div class="type">
+        <img class="type-image" [src]="type.image_src" [alt]="type.image_alt">
+        <p class="type-title"> {{ type.type }} </p>
+      </div>
+    }
+  </div>
+
+  <div class="screen">Screen</div>
+  <ul class="seats">
+    @for ( seat of seats; track seat ) {
+      <li
+        (click)="toggleSeatSelection(seat)"
+        [class.selected]="selected_seats.includes(seat)"
+        [class.busy]="busy_seats.includes(seat)"
+        #seat class="seat">
+        {{ seat }}
+      </li>
+    }
+  </ul>
+
+  <div class="buttons">
+    <button (click)="return()" class="return">Return</button>
+
+    <p
+      class="seats-quantity">
+      <span
+        class="quantity"
+        [class.quantity-reached]="selected_seats.length === seats_quantity()">
+        {{ selected_seats.length }}/{{ seats_quantity() }}
+      </span>
+      seats
+    </p>
+
+    <button (click)="continue()" class="continue">Continue</button>
+  </div>
+</div>

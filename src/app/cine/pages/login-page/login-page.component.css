@@ -1,0 +1,83 @@
+input {
+  height: 2rem;
+  width: 90%;
+  align-self: center;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+  margin: 5rem auto;
+  width: 60%;
+  box-shadow: 0 0 30px black;
+  border-radius: 30px;
+  background-color: #2A2A2C;
+}
+
+.inputs {
+  width: 90%;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: repeat(4,1fr);
+  grid-template-areas: "s1 s1" "s2 s2" "s3 s3" "s4 s5";
+  column-gap: 1rem;
+}
+
+.password { width: 10rem; }
+
+.input-content:nth-child(1) { grid-area: s1; }
+.input-content:nth-child(2) { grid-area: s2; }
+.input-content:nth-child(3) { grid-area: s3; }
+.input-content:nth-child(4) { grid-area: s4; }
+.input-content:nth-child(5) { grid-area: s5; }
+
+.eye {
+  cursor: pointer;
+  display: grid;
+  align-self: center;
+}
+
+.invisible { display: none; }
+
+.log-in {
+  cursor: pointer;
+  margin: 2rem auto 2rem auto;
+  padding: 1rem;
+  width: 50%;
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: #0f7101;
+  color: white;
+  border: black;
+}
+
+.log-in:hover {
+  background-color: #630023b4;
+  transition: 0.4s all;
+}
+
+.register { color: mediumspringgreen; }
+
+@media ( min-width: 460px ) {
+  .form { width: 30rem; }
+
+  .inputs {
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+    grid-template-areas: "s1 s2 s2" "s3 s4 s5";
+    row-gap: 1rem;
+  }
+
+  .password { width: 14rem; }
+}
+
+
+
